@@ -8,7 +8,7 @@ This repository contains the code for the paper "IndicMT Eval: A Dataset to Meta
 - [MQM Dataset](#mqm)
 - [Setup](#setup)
 - [Indic Comet](#indiccomet)
-- [Metrics](#metircs)
+- [Other Metrics](#metrics)
 - [Citation](#citation)
 
 ## Overview
@@ -17,9 +17,16 @@ We contribute a Multidimensional Quality Metric (MQM) dataset for Indian languag
 
 Please find more details of this work in our paper (link coming soon).
 
+<a name="mqm"/>
 ## MQM Dataset
 
 The MQM annotated dataset collected with the help of language experts for the 5 Indian lamguages (Hindi, Tamil, Marathi, Malayalam, Gujarati) can be downloaded from here (link coming soon).
+
+An example of an MQM annotation containing the source, reference and the translated output with error spans as demarcated by the annotator looks like the following:
+![MQM-example](https://github.com/AI4Bharat/IndicMT-Eval/assets/23221743/0296986f-bb89-4044-88ef-b8fb71acf9ee)
+
+More details regarding the instructions provided and the procedures followed for annotations are present in the paper.
+
 
 ## Setup
 
@@ -38,7 +45,7 @@ All the original datasets used in our experiments can be directly downloaded by 
 cd data
 bash download.sh
 ```
-
+<a name="indiccomet"/>
 ## Indic Comet
 We load the pretrained encoder and initialize it with either XLM-Roberta, COMET-DA or COME-MQM weights. During training, we divide the model parameters into two groups: the encoder parameters, that include the encoder model and the regressor parameters, that include the parameters from the top feed-forward network. We apply gradual unfreezing and discriminative learning rates, meaning that the encoder model is frozen for one epoch while the feed-forward is optimized with a learning rate. After the first epoch, the entire model is fine-tuned with a different learning rate. Since we are fine-tuning on a small dataset, we make use of early stopping with a patience of 3. The best saved checkpoint is decided using the overall Kendall-tau correlation on the test set. The training hyper-parameters used are given in table below.
 
@@ -62,10 +69,31 @@ We load the pretrained encoder and initialize it with either XLM-Roberta, COMET-
 
   Download the best checkpoint here (link coming soon)
 
+<a name="metrics"/>
 ## Other Metrics
 
 We followed the implementation of metrics with the help of the following repositories:
  For BLEU, METEOR, ROUGE-L, CIDEr, Embedding Averaging, Greedy Matching, and Vector Extrema, we use the implementation provided by [Sharma et al. (2017)](https://github.com/Maluuba/nlg-eval). For chrF++, TER, BERTScore, and BLEURT, we use the repository of [Castro Ferreira et al. (2020)](https://github.com/WebNLG/GenerationEval).  For SMS, WMDo, and Mover-Score, we use the implementation provided by [Fabbri et al. (2020)](https://github.com/Yale-LILY/SummEval). For all the remaining task-specific metrics, we use the official codes from the respective papers.
+ 
+ <br>
+ The python file code/evaluate.py runs all of these metrics on the given dataset.
 
 ## Citation
-Coming soon
+If you find IndicMTEval useful in your research or work, please consider citing our paper.
+```
+@article{DBLP:journals/corr/abs-2212-10180,
+  author       = {Ananya B. Sai and
+                  Vignesh Nagarajan and
+                  Tanay Dixit and
+                  Raj Dabre and
+                  Anoop Kunchukuttan and
+                  Pratyush Kumar and
+                  Mitesh M. Khapra},
+  title        = {IndicMT Eval: {A} Dataset to Meta-Evaluate Machine Translation metrics
+                  for Indian Languages},
+  journal      = {CoRR},
+  volume       = {abs/2212.10180},
+  year         = {2022}
+}
+```
+
