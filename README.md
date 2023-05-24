@@ -5,10 +5,10 @@ This repository contains the code for the paper "IndicMT Eval: A Dataset to Meta
 ## Contents
 
 - [Overview](#overview)
-- [MQM Dataset](#mqm)
+- [MQM Dataset](#mqm-dataset)
 - [Setup](#setup)
-- [Indic Comet](#indiccomet)
-- [Other Metrics](#metrics)
+- [Indic Comet](#indic-comet)
+- [Other Metrics](#other-metrics)
 - [Citation](#citation)
 
 ## Overview
@@ -17,7 +17,6 @@ We contribute a Multidimensional Quality Metric (MQM) dataset for Indian languag
 
 Please find more details of this work in our paper (link coming soon).
 
-<a name="mqm"/>
 ## MQM Dataset
 
 The MQM annotated dataset collected with the help of language experts for the 5 Indian lamguages (Hindi, Tamil, Marathi, Malayalam, Gujarati) can be downloaded from here (link coming soon).
@@ -45,8 +44,10 @@ All the original datasets used in our experiments can be directly downloaded by 
 cd data
 bash download.sh
 ```
-<a name="indiccomet"/>
+<br>
+
 ## Indic Comet
+
 We load the pretrained encoder and initialize it with either XLM-Roberta, COMET-DA or COME-MQM weights. During training, we divide the model parameters into two groups: the encoder parameters, that include the encoder model and the regressor parameters, that include the parameters from the top feed-forward network. We apply gradual unfreezing and discriminative learning rates, meaning that the encoder model is frozen for one epoch while the feed-forward is optimized with a learning rate. After the first epoch, the entire model is fine-tuned with a different learning rate. Since we are fine-tuning on a small dataset, we make use of early stopping with a patience of 3. The best saved checkpoint is decided using the overall Kendall-tau correlation on the test set. The training hyper-parameters used are given in table below.
 
 <br> 
@@ -69,7 +70,6 @@ We load the pretrained encoder and initialize it with either XLM-Roberta, COMET-
 
   Download the best checkpoint here (link coming soon)
 
-<a name="metrics"/>
 ## Other Metrics
 
 We followed the implementation of metrics with the help of the following repositories:
@@ -83,12 +83,12 @@ If you find IndicMTEval useful in your research or work, please consider citing 
 ```
 @article{DBLP:journals/corr/abs-2212-10180,
   author       = {Ananya B. Sai and
-                  Vignesh Nagarajan and
                   Tanay Dixit and
-                  Raj Dabre and
+                  Vignesh Nagarajan and
                   Anoop Kunchukuttan and
                   Pratyush Kumar and
-                  Mitesh M. Khapra},
+                  Mitesh M. Khapra and
+                  Raj Dabre},
   title        = {IndicMT Eval: {A} Dataset to Meta-Evaluate Machine Translation metrics
                   for Indian Languages},
   journal      = {CoRR},
