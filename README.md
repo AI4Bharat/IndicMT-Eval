@@ -44,7 +44,6 @@ We load the pretrained encoder and initialize it with either XLM-Roberta, COMET-
 
 <br> 
 
-| Task| Link(s) |
  | Hyperparameters | Value |
  | ----------------| ------| 
   | batch size | 16 |
