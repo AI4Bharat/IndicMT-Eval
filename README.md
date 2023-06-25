@@ -38,11 +38,10 @@ pip install -r requirements.txt
 ```
 ### Load the data
 
-All the original datasets used in our experiments can be directly downloaded by running the following command.
-
+The easiest method to access / view the data is to visit this [link](https://docs.google.com/spreadsheets/d/1HEwlBTLvN2NOXLxiBpIt_GVdHkjyvIo8DvQrncgto74/edit?usp=sharing)
+More details in data folder
 ```
 cd data
-bash download.sh
 ```
 <br>
 
