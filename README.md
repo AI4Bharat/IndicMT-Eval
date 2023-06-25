@@ -47,27 +47,14 @@ cd data
 
 ## Indic Comet
 
-We load the pretrained encoder and initialize it with either XLM-Roberta, COMET-DA or COME-MQM weights. During training, we divide the model parameters into two groups: the encoder parameters, that include the encoder model and the regressor parameters, that include the parameters from the top feed-forward network. We apply gradual unfreezing and discriminative learning rates, meaning that the encoder model is frozen for one epoch while the feed-forward is optimized with a learning rate. After the first epoch, the entire model is fine-tuned with a different learning rate. Since we are fine-tuning on a small dataset, we make use of early stopping with a patience of 3. The best saved checkpoint is decided using the overall Kendall-tau correlation on the test set. The training hyper-parameters used are given in table below.
+We load the pretrained encoder and initialize it with either XLM-Roberta, COMET-DA or COME-MQM weights. During training, we divide the model parameters into two groups: the encoder parameters, that include the encoder model and the regressor parameters, that include the parameters from the top feed-forward network. We apply gradual unfreezing and discriminative learning rates, meaning that the encoder model is frozen for one epoch while the feed-forward is optimized with a learning rate. After the first epoch, the entire model is fine-tuned with a different learning rate. Since we are fine-tuning on a small dataset, we make use of early stopping with a patience of 3. The best saved checkpoint is decided using the overall Kendall-tau correlation on the test set. We use the [COMET](https://github.com/Unbabel/COMET) repository for training and our checkpoints are compatible with their setup.
 
-<br> 
+Download the best checkpoint here
 
- | Hyperparameters | Value |
- | ----------------| ------| 
-  | batch size | 16 |
-  | dropout | 0.1 |
-  | encoder learning rate | 1.0e-05 |
-  | encoder model | XLM-RoBERTa |
-  | hidden sizes | 3072, 1536 |
-  |  layer | mix |
-  | layerwise decay | 0.95 |
-  | learning rate | 3.0e-05 |
-  | no. of frozen epochs | 1 |
-  | optimizer | AdamW |
-  | pool | avg |
-  
-  <br> 
-
-  Download the best checkpoint here (link coming soon)
+| MQM | DA |
+| ---- | --- |
+| [indic-comet-mqm](https://objectstore.e2enetworks.net/indic-trans/Indic-COMET-MQM/checkpoints/epoch=2-step=939.ckpt) | [indic-comet-da](https://objectstore.e2enetworks.net/indic-trans/Indic-COMET-DA/checkpoints/epoch=3-step=1252.ckpt) |
+| [hparams.yaml](https://objectstore.e2enetworks.net/indic-trans/Indic-COMET-MQM/checkpoints/hparams.yaml) | [hparamas.yaml](https://objectstore.e2enetworks.net/indic-trans/Indic-COMET-DA/checkpoints/hparams.yaml) |
 
 ## Other Metrics
 
