@@ -29,13 +29,6 @@ More details regarding the instructions provided and the procedures followed for
 
 ## Setup
 
-### Install Dependencies
-
-Our code is based on python 3.7 and to install all the dependencies run the following command. <br>
-
-```
-pip install -r requirements.txt
-```
 ### Load the data
 
 The easiest method to access / view the data is to visit this [link](https://docs.google.com/spreadsheets/d/1HEwlBTLvN2NOXLxiBpIt_GVdHkjyvIo8DvQrncgto74/edit?usp=sharing)
