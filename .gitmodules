@@ -1,3 +1,6 @@
 [submodule "COMET"]
 	path = COMET
 	url = https://github.com/Unbabel/COMET.git
+[submodule "path/to/COMET"]
+	path = path/to/COMET
+	url = https://github.com/uanushkatkd/COMET.git
