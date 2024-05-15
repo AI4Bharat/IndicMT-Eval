@@ -1,0 +1,3 @@
+[submodule "COMET"]
+	path = COMET
+	url = https://github.com/Unbabel/COMET.git
