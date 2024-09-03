@@ -74,5 +74,12 @@ If you find IndicMTEval useful in your research or work, please consider citing 
   volume       = {abs/2212.10180},
   year         = {2022}
 }
+
+@article{singh2024good,
+  title={How Good is Zero-Shot MT Evaluation for Low Resource Indian Languages?},
+  author={Singh, Anushka and Sai, Ananya B and Dabre, Raj and Puduppully, Ratish and Kunchukuttan, Anoop and Khapra, Mitesh M},
+  journal={arXiv preprint arXiv:2406.03893},
+  year={2024}
+}
 ```
 
