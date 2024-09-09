@@ -46,8 +46,8 @@ Download the best checkpoint here
 
 | MQM | DA |
 | ---- | --- |
-| [indic-comet-mqm](https://objectstore.e2enetworks.net/indic-trans/Indic-COMET-MQM/checkpoints/epoch=2-step=939.ckpt) | [indic-comet-da](https://objectstore.e2enetworks.net/indic-trans/Indic-COMET-DA/checkpoints/epoch=3-step=1252.ckpt) |
-| [hparams.yaml](https://objectstore.e2enetworks.net/indic-trans/Indic-COMET-MQM/checkpoints/hparams.yaml) | [hparamas.yaml](https://objectstore.e2enetworks.net/indic-trans/Indic-COMET-DA/checkpoints/hparams.yaml) |
+| [indic-comet-mqm](https://objectstore.e2enetworks.net/indic-asr-public/data/anushka/comet_mqm_1.5e-5/comet_mqm_1.5e-5/checkpoints/epoch=2-step=1875-val_kendall=0.455.ckpt) | [indic-comet-da](https://objectstore.e2enetworks.net/indic-asr-public/data/anushka/comet_da_1.5e-5/comet_da_1.5e-5/checkpoints/epoch=3-step=2500-val_kendall=0.456.ckpt) |
+| [hparams.yaml](https://objectstore.e2enetworks.net/indic-asr-public/data/anushka/comet_da_1.5e-5/comet_da_1.5e-5/hparams.yaml) | [hparamas.yaml](https://objectstore.e2enetworks.net/indic-asr-public/data/anushka/comet_mqm_1.5e-5/comet_mqm_1.5e-5/hparams.yaml) |
 
 ## Other Metrics
 
